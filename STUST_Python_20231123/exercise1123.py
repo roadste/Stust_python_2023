@@ -24,9 +24,9 @@ class Employee:
 
     def emp_assign_department(self,new_department):
         self.emp_department = new_department
-        
-    def print_employee_details(self):
         print(self.emp_department)
+    def print_employee_details(self):
+        #print(self.emp_department)
         print(self.emp_id,self.emp_name)
 
     
