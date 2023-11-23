@@ -1,38 +1,51 @@
 class Employee:
-    def __init__(self, emp_id, emp_name, emp_salary, emp_department, emp_hour):
-        self.emp_id = emp_id
-        self.emp_name = emp_name
-        self.emp_salary = emp_salary
-        self.emp_department = emp_department
-        self.emp_hour = emp_hour
+    def __init__(self, id, name, salary, department):
+        self.id = id
+        self.name = name
+        self.salary = salary
+        self.department = department
+        
 
-    def calculate_emp_salary(self):
-        overhour=0
-        overpay = 0
-        pay = 0
+    def calculate_emp_salary(self,hour):
+        overtime = 0
 
-        if self.emp_hour > 50:
-             overhour= self.emp_hour - 50
-             overpay = 50 * self.emp_salary + (overhour * (self.emp_salary/50))
-             print(overpay)
-
-        else :
-            pay = self.emp_salary * self.emp_hour
-            print(pay)
-
-        #print(self.emp_salary)
+        if hour > 50:
+            overtime = hour - 50
+            self.salary = self.salary + (overtime * (self.salary / 50))
+        else:
+            self.salary = self.salary * (hour / 50)
+ 
+            
 
     def emp_assign_department(self,new_department):
-        self.emp_department = new_department
-        print(self.emp_department)
+        self.department = new_department
+        
+
     def print_employee_details(self):
-        #print(self.emp_department)
-        print(self.emp_id,self.emp_name)
+        print("\nName: ", self.name)
+        print("ID: ", self.id)
+        print("Salary: ", self.salary)
+        print("Department: ", self.department)
+        print("----------------------")
 
     
-e1 = Employee ("E7876","亞當",50000,"會計",40)
+e1 = Employee ("E7876","ADAMS",50000,"ACCOUNTING")
+e1.calculate_emp_salary(30)
+e1.emp_assign_department("OPERATIONS")
 e1.print_employee_details()
-e1.emp_assign_department("研究")
+
+e2 = Employee ("E7499","JONES",45000,"RESEARCH")
+e2.calculate_emp_salary(50)
+e2.print_employee_details()
+
+e3 = Employee ("E7900","MARTIN",50000,"SALES")
+e3.calculate_emp_salary(0)
+e3.print_employee_details()
+
+e4 = Employee ("E7698","SMITH",55000,"OPERATIONS")
+e4.calculate_emp_salary(60)
+e4.emp_assign_department("SALES")
+e4.print_employee_details()
 
 
 
