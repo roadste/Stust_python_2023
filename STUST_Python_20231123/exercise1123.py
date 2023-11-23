@@ -22,28 +22,18 @@ class Employee:
 
         #print(self.emp_salary)
 
-    def emp_assign_department(self):
-        print(self.emp_department)
-
+    def emp_assign_department(self,new_department):
+        self.emp_department = new_department
+        
     def print_employee_details(self):
+        print(self.emp_department)
         print(self.emp_id,self.emp_name)
 
-e1 = Employee ("E7876","亞當斯",50000,"會計",40)
+    
+e1 = Employee ("E7876","亞當",50000,"會計",40)
 e1.print_employee_details()
-e1.emp_assign_department()
-e1.calculate_emp_salary()
+e1.emp_assign_department("研究")
 
-e2 = Employee ("E7499","瓊斯",45000,"研究",60)
-e2.print_employee_details()
-e2.emp_assign_department()
-e2.calculate_emp_salary()
 
-e3 = Employee ("E7900","馬丁",50000,"銷售",50)
-e3.print_employee_details()
-e3.emp_assign_department()
-e3.calculate_emp_salary()
 
-e4 = Employee ("E7698","史密斯",55000,"操作",58)
-e4.print_employee_details()
-e4.emp_assign_department()
-e4.calculate_emp_salary()
+
