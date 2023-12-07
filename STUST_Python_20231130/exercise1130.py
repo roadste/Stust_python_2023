@@ -13,6 +13,22 @@ class Student:
         self.id = id
         self.address = address
 
+
+    @property
+    def student_name(self):
+        print(f'"{self.name}"was accessed')
+        return self.name
+
+    @student_name.setter
+    def student_name(self, value):
+        print(f'"{self.name}"is now "{value}".')
+        self.name = value
+
+    @student_name.deleter
+    def student_name(self):
+        print(f'"{self.name}"was deleted')
+        del self.name
+
     #設置姓名和讀取姓名
     def setname(self,new_name):
         self.name = new_name
@@ -70,6 +86,14 @@ class Student:
         return self.address
 
 
-st1 = Student("hi","stust","computer","hello",20,60,123456,"ttttt")
+'''st1 = Student("hi","stust","computer","hello",20,60,123456,"ttttt")
 print(st1.Getmajor())
-print(st1.Getaddress())
+print(st1.Getaddress())'''
+
+if __name__ == "__main__":
+    st1 = Student("hi","stust","computer","hello",20,60,123456,"ttttt")
+
+    print(st1.student_name)
+    st1.student_name = "peter"
+    del st1.student_name
+    print(st1.student_name)
