@@ -98,7 +98,7 @@ def generate_sample_data(connection):
             semester = "Fall 2023"
             student.add_course(course_code, course_name, semester)
  
-        student.save_to_database()
+        #student.save_to_database()
         sample_students.append(student)
  
     return sample_students
