@@ -21,3 +21,10 @@ class Beverageshopemployer:
     def overtime(self,new_overtime):
         new_overtime = self.time - 240
         print(new_overtime)
+
+emp1 = Beverageshopemployer("jack",5,250)
+emp1.searchname()
+emp1.seniority()
+emp1.worktime()
+emp1.salary()
+emp1.overtime()
