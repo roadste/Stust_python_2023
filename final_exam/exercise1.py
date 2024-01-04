@@ -7,11 +7,11 @@ class friedchicken:
         self.spicy=spicy
         self.pepper=pepper
         self.howmuch=howmuch
-
+#是否需要九層塔和種類
     def Addingmaterials(self):
         print("type:",self.type)
         print("basil yes or not:",self.basil)
-
+#需要的口味
     def taste(self):
         if self.spicy == "no" and self.pepper == "no" : 
             print("taste:both not")
@@ -21,6 +21,7 @@ class friedchicken:
             print("taste:pepper")
         else:
             print("taste:both")
+#數量            
     def amount(self):
         print("amount:",self.howmuch)
 
